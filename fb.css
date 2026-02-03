@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "SFProDisplay-Regular", Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Ensure full viewport height */
+    padding: 20px;
+    /* Prevent content from touching edges on small screens */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* Align to the top of the flex container */
+    max-width: 980px;
+    width: 100%;
+    padding-top: 20px;
+    /* Give some visual space */
+    padding-bottom: 20px;
+}
+
+/* Left Section - Text and Logo */
+.left-section {
+    flex: 1;
+    /* Take up available space */
+    max-width: 580px;
+    /* Typical max width for this section */
+    padding-right: 32px;
+    margin-top: 40px;
+    /* Align visually with the card top */
+}
+
+.logo {
+    color: #1877f2;
+    font-size: 56px;
+    /* Slightly adjusted size */
+    font-weight: bold;
+    letter-spacing: -1.5px;
+    /* Tighter tracking for brand match */
+    margin-bottom: 12px;
+    margin-left: -4px;
+    /* Optical alignment */
+}
+
+.tagline {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 32px;
+    color: #1c1e21;
+}
+
+/* Right Section - Login Card */
+.right-section {
+    width: 396px;
+    /* Fixed width as per FB design */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    padding: 20px 16px;
+    /* 16px horizontal padding */
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+    /* Space between card and 'Create a Page' */
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card input {
+    height: 50px;
+    /* Adjusted height */
+    padding: 14px 16px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    font-size: 17px;
+    margin-bottom: 12px;
+    line-height: 16px;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: #1877f2;
+    box-shadow: 0 0 0 2px #e7f3ff;
+}
+
+.login-btn {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    width: 100%;
+    /* Explicitly set to full width */
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #166fe5;
+}
+
+.forgot-password {
+    display: block;
+    /* Ensure it takes its own line */
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 16px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    border-bottom: 1px solid #dadde1;
+    margin: 20px 0;
+    /* Vertical spacing for the divider */
+}
+
+.create-account-btn {
+    background-color: #42b72a;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    padding: 0 16px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+.create-account-btn:hover {
+    background-color: #36a420;
+}
+
+.create-page {
+    font-size: 14px;
+    color: #1c1e21;
+}
+
+.create-page a {
+    text-decoration: none;
+    color: #1c1e21;
+    font-weight: bold;
+}
+
+.create-page a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0;
+    }
+
+    .left-section {
+        flex: none;
+        /* remove flex stretch */
+        width: 100%;
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 40px;
+        margin-top: 20px;
+    }
+
+    .tagline {
+        margin: 0 auto;
+        /* Center tagline text block if strictly needed, though center-align handles it */
+    }
+
+    .right-section {
+        width: 100%;
+        max-width: 396px;
+    }
+}
