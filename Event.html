@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <!-- Event Propagation -->
+     <div id="parent">
+        gvgghgghgh<button id="child">Click Me</button>
+     </div>
+     <ul id="list">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+     <script>
+        document.getElementById("parent").addEventListener("click", function() {
+            alert("Parent Clicked");
+        })
+        document.getElementById("child").addEventListener("click", function(event) {
+            alert("Child Clicked");
+            // event.stopPropagation();
+        })
+        document.getElementById("list").addEventListener("click", function(event) {
+            if (event.target.tagName === "LI") {
+                alert("List item clicked: " + event.target.textContent);
+            }
+        })
+     </script>
+</body>
+</html>
