@@ -1,0 +1,38 @@
+name: Daily Auto Commit
+
+on:
+  schedule:
+    # 18:30 UTC = 00:00 IST
+    - cron: "30 18 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily-auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure git identity
+        run: |
+          git config user.name "sandeep mamidala"
+          git config user.email "mamidalasandeep5@gmail.com"
+
+      - name: Update daily activity file
+        run: |
+          mkdir -p .github
+          echo "$(date -u +'%Y-%m-%dT%H:%M:%SZ') daily automation commit" >> .github/daily-activity.log
+
+      - name: Commit and push
+        run: |
+          git add .github/daily-activity.log
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore: daily automated commit"
+          git push
