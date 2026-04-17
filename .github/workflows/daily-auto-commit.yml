@@ -2,8 +2,15 @@ name: Daily Auto Commit
 
 on:
   schedule:
-    # 18:30 UTC = 00:00 IST
-    - cron: "30 18 * * *"
+    # 8 runs per day (every 3 hours), aligned with 00:00 IST at 18:30 UTC
+    - cron: "30 18 * * *" # 00:00 IST
+    - cron: "30 21 * * *" # 03:00 IST
+    - cron: "30 0 * * *"  # 06:00 IST
+    - cron: "30 3 * * *"  # 09:00 IST
+    - cron: "30 6 * * *"  # 12:00 IST
+    - cron: "30 9 * * *"  # 15:00 IST
+    - cron: "30 12 * * *" # 18:00 IST
+    - cron: "30 15 * * *" # 21:00 IST
   workflow_dispatch:
 
 permissions:

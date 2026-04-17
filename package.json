@@ -1,6 +1,14 @@
 {
+  "name": "int219",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node feedback-hub/server.js",
+    "dev": "node feedback-hub/server.js"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.18",
+    "express": "^5.2.1",
     "tailwindcss": "^4.1.18"
   }
 }

@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1775812578747,
+    "category": "bug",
+    "title": "Bug",
+    "description": "dmzhfs",
+    "priority": "Medium",
+    "rating": 5,
+    "createdAt": "2026-04-10T09:16:18.747Z"
+  },
+  {
+    "id": 1775812574069,
+    "category": "feature",
+    "title": "Feature",
+    "description": "amnsdvaj",
+    "priority": "Medium",
+    "rating": 5,
+    "createdAt": "2026-04-10T09:16:14.069Z"
+  },
+  {
+    "id": 1001,
+    "category": "bug",
+    "title": "Bug",
+    "description": "Login button not working on mobile view.",
+    "priority": "High",
+    "rating": 4,
+    "createdAt": "2026-04-10T10:28:00.000Z"
+  },
+  {
+    "id": 1002,
+    "category": "feature",
+    "title": "Feature",
+    "description": "Add dark mode toggle in header.",
+    "priority": "Medium",
+    "rating": 5,
+    "createdAt": "2026-04-10T10:15:00.000Z"
+  },
+  {
+    "id": 1003,
+    "category": "review",
+    "title": "Review",
+    "description": "The new design looks clean and modern!",
+    "priority": "Low",
+    "rating": 5,
+    "createdAt": "2026-04-10T09:30:00.000Z"
+  }
+]

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Outfit:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-gradient"></div>
+    <main class="page">
+      <header class="title-block reveal-up">
+        <div class="badge">☁</div>
+        <div>
+          <h1>Feedback Hub</h1>
+          <p>Help us make this website better</p>
+        </div>
+      </header>
+
+      <section class="grid-layout">
+        <article class="panel form-panel reveal-up delay-1">
+          <h2>✚ Submit Feedback</h2>
+          <form id="feedbackForm">
+            <label for="category">Category</label>
+            <div class="select-wrap" id="categorySelect">
+              <button type="button" class="select-trigger" id="selectTrigger" aria-expanded="false">
+                <span id="selectedCategory">🐞 Bug Report</span>
+                <span>⌄</span>
+              </button>
+              <ul class="select-options" id="selectOptions">
+                <li data-value="bug">🐞 Bug Report</li>
+                <li data-value="feature">✨ Feature Request</li>
+                <li data-value="review">⭐ Review / Suggestion</li>
+              </ul>
+            </div>
+
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <label>Rate this feedback</label>
+            <div class="rating" id="ratingStars" role="radiogroup" aria-label="Feedback rating">
+              <button type="button" data-rate="1" aria-label="1 star">★</button>
+              <button type="button" data-rate="2" aria-label="2 stars">★</button>
+              <button type="button" data-rate="3" aria-label="3 stars">★</button>
+              <button type="button" data-rate="4" aria-label="4 stars">★</button>
+              <button type="button" data-rate="5" aria-label="5 stars">★</button>
+            </div>
+
+            <label for="description">Description</label>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Please describe the issue or idea in detail..."
+              required
+            ></textarea>
+
+            <button type="submit" class="submit-btn">✈ SUBMIT TO TEAM</button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <article class="reveal-up delay-2">
+          <h2 class="recent-title">Recent Feedbacks</h2>
+          <div id="feedbackList" class="cards"></div>
+        </article>
+      </section>
+    </main>
+
+    <template id="feedbackCardTemplate">
+      <section class="card fade-card">
+        <div class="card-top">
+          <div class="left">
+            <h3></h3>
+            <span class="priority"></span>
+          </div>
+          <div class="stars"></div>
+        </div>
+        <p class="desc"></p>
+        <p class="time"></p>
+      </section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
